@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab/screens/home_screen.dart';
 import 'models/payment.dart';
 
 void main() {
@@ -22,19 +23,7 @@ class GenTrackApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('GenTrack'),
-          backgroundColor: Colors.teal,
-          foregroundColor: Colors.white,
-        ),
-        body: Center(
-          child: Text(
-            'Total paid: ${formatIqd(total)}',
-            style: const TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
+      home: const HomeScreen()
     );
   }
 }
