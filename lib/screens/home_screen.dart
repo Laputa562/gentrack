@@ -12,7 +12,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GenTrack'),
+        title: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          Text('GenTrack')
+        ],),
         centerTitle: true,
         backgroundColor: Colors.purple,
         foregroundColor: Colors.white,
@@ -23,6 +25,9 @@ class HomeScreen extends StatelessWidget {
             },
             icon: const Icon(Icons.settings),
           ),
+          TextButton(onPressed: () {
+            print('See all');
+          }, child: const Text('See all'))
         ],
       ),
       body: Column(

@@ -12,19 +12,19 @@ class SummaryCard extends StatelessWidget{
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.purpleAccent,
+        color: Colors.orange.shade100,
       ),
       child: Row(
         children: [
           const Icon(
             Icons.bolt,
             size: 40,
-            color: Colors.teal,
+            color: Colors.orange,
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,6 +35,9 @@ class SummaryCard extends StatelessWidget{
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+              Text(
+                '${samplePayments.length} Payments'
               ),
             ],
           ),

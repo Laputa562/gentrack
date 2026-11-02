@@ -42,6 +42,7 @@ final List<Payment> samplePayments = [
       category: 'Fuel', date: DateTime(2026, 10, 10)),
   Payment(title: 'Electrician', amount: 12000,
       category: 'Repairs', date: DateTime(2026, 10, 9)),
+  Payment(title: 'Doctor', amount: 15000, category: 'Health', date: DateTime(2026, 10, 9))
 ];
 // Adds up the amounts of all payments in the list.
 int totalOf(List<Payment> payments) {

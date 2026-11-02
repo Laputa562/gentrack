@@ -33,6 +33,8 @@ IconData iconFor(String category){
       return Icons.local_gas_station;
     case 'Repairs':
       return Icons.build;
+    case 'Health':
+      return Icons.local_hospital;
       default:
         return Icons.payment;
   }
