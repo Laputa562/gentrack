@@ -17,7 +17,7 @@ class PaymentTile extends StatelessWidget {
       subtitle: Text(payment.category),
       trailing: Text(
         formatIqd(payment.amount),
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

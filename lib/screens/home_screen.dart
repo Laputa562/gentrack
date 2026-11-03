@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lab/models/payment.dart';
-import 'package:lab/widgets/payment_tile.dart';
-
+import '../widgets/payment_list.dart';
 import '../widgets/summary_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,44 +11,36 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text('GenTrack')
-        ],),
-        centerTitle: true,
-        backgroundColor: Colors.purple,
-        foregroundColor: Colors.white,
+        title: const Text('GenTrack'),
         actions: [
           IconButton(
             onPressed: () {
-              print('Settings Tapped');
+              debugPrint('Settings Tapped');
             },
             icon: const Icon(Icons.settings),
           ),
-          TextButton(onPressed: () {
-            print('See all');
-          }, child: const Text('See all'))
+          TextButton(
+            onPressed: () {
+              debugPrint('See all');
+            },
+            child: const Text('See all'),
+          ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SummaryCard(total: totalOf(samplePayments)),
-          const Padding(padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              'Recent Payments',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-              )
-            )
-          ),
-          Expanded(child: ListView(children: [
-
-          for (final e in samplePayments)
-            PaymentTile(payment: e)
-
-          ],))
-        ],
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final card = SummaryCard(total: totalOf(samplePayments));
+          final list = PaymentList(payments: samplePayments);
+          if (constraints.maxWidth < 600) {
+            return Column(
+              children: [card, Expanded(child: list)],
+            );
+          }
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [SizedBox(width: 360, child: card), Expanded(child: list)],
+          );
+        },
       ),
     );
   }

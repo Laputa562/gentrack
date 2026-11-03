@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab/screens/home_screen.dart';
+import 'package:lab/theme/app_theme.dart';
 import 'models/payment.dart';
 
 void main() {
@@ -20,9 +21,9 @@ class GenTrackApp extends StatelessWidget {
     return MaterialApp(
       title: 'GenTrack',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-      ),
+      theme: AppTheme.light(),
+      darkTheme: AppTheme.dark(),
+      themeMode: ThemeMode.system,
       home: const HomeScreen()
     );
   }
