@@ -16,7 +16,7 @@ class SummaryCard extends StatelessWidget{
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: colors.primaryContainer,
+        color: colors.secondaryContainer,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
@@ -24,18 +24,18 @@ class SummaryCard extends StatelessWidget{
           Icon(
             Icons.bolt,
             size: 40,
-            color: colors.onPrimaryContainer,
+            color: colors.onSecondaryContainer,
           ),
           const SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Total Paid',
-              style: text.bodyMedium?.copyWith(color: colors.onPrimaryContainer),
+              style: text.bodyMedium?.copyWith(color: colors.onSecondaryContainer),
                 ),
               Text(
                 formatIqd(total),
-                style: text.headlineMedium?.copyWith(color: colors.onPrimaryContainer,
+                style: text.headlineMedium?.copyWith(color: colors.onSecondaryContainer,
                     fontWeight: FontWeight.bold
                 ),
               ),

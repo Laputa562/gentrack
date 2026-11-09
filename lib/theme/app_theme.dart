@@ -7,7 +7,7 @@ class AppTheme {
 
   static ThemeData _build(Brightness brightness) {
     final scheme = ColorScheme.fromSeed(
-      seedColor: Colors.purpleAccent,
+      seedColor: Colors.greenAccent,
       brightness: brightness,
     );
 
@@ -18,7 +18,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         backgroundColor: scheme.primary,
         foregroundColor: scheme.onPrimary,
-        centerTitle: true,
+        centerTitle: false
       ),
     );
   }

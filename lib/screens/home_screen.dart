@@ -37,8 +37,9 @@ class HomeScreen extends StatelessWidget {
             );
           }
           return Row(
+
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [SizedBox(width: 360, child: card), Expanded(child: list)],
+            children: [SizedBox(width: 300, child: card), Expanded(child: list)],
           );
         },
       ),
