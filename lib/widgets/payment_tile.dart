@@ -4,8 +4,9 @@ import '../models/payment.dart';
 
 class PaymentTile extends StatelessWidget {
   final Payment payment;
+  final VoidCallback onDelete;
 
-  const PaymentTile({super.key, required this.payment});
+  const PaymentTile({super.key, required this.payment, required this.onDelete});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,16 @@ class PaymentTile extends StatelessWidget {
       ),
       title: Text(payment.title),
       subtitle: Text(payment.category),
-      trailing: Text(
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+      children: [
+      Text(
         formatIqd(payment.amount),
         style: Theme.of(context).textTheme.titleMedium,
       ),
+    IconButton(onPressed: onDelete, icon: const Icon(Icons.delete_outline))
+      ],
+      )
     );
   }
 }

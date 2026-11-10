@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lab/widgets/payment_tile.dart';
-import 'package:lab/widgets/summary_card.dart';
 
 import '../models/payment.dart';
 
 class PaymentList extends StatelessWidget{
   final List<Payment> payments;
+  final ValueChanged<Payment> onDelete;
   const PaymentList({
     super.key,
     required this.payments,
+    required this.onDelete,
   });
 
   @override
@@ -24,8 +25,8 @@ class PaymentList extends StatelessWidget{
         ),
         Expanded(child: ListView(children: [
 
-          for (final e in samplePayments)
-            PaymentTile(payment: e)
+          for (final e in payments)
+            PaymentTile(payment: e, onDelete: () => onDelete(e))
 
         ],))
       ],
